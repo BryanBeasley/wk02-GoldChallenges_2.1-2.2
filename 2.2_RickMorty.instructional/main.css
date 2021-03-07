@@ -1,1 +1,21 @@
 /* STYLE HERE */
+
+body {
+	background-color: grey;
+	height: 100vh;
+	margin: 0;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+img {
+    border: black 1px solid;
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+    
+}
+
+

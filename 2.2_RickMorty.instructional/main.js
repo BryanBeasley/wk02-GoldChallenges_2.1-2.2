@@ -18,3 +18,32 @@
 */
 
 //NOTE: Write your code below and push back to your github branch.  SUBMIT YOUR GITHUB URL IN CANVAS
+
+
+const imageBoxOne = document.getElementById('imageOne');
+const imageBoxTwo = document.getElementById('imageTwo');
+
+
+
+function getRick(){
+fetch('https://rickandmortyapi.com/api/character')
+  .then(res => res.json())
+  .then(json => console.log(json)); 
+ };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
