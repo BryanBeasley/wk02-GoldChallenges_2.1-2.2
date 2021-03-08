@@ -19,23 +19,71 @@
 
 //NOTE: Write your code below and push back to your github branch.  SUBMIT YOUR GITHUB URL IN CANVAS
 
+const baseURL = 'https://rickandmortyapi.com/api/character'
 
+let ricknMortyimg = document.querySelector('img')
 const imageBoxOne = document.getElementById('imageOne');
 const imageBoxTwo = document.getElementById('imageTwo');
 
+/*
+  -Since fetch starts a Promise, we can use the then() method to return that Promise. As a reminder, then() takes up to two arguments: callback functions for the success and failure cases of the Promise. Here, we're just using the success argument and calling it response. If successful, we'll get a response back from the API, and then we can do stuff with it!
+  -we can use .json()-it means it reads the body so we can use it and returns a promise once it's done parsing the body as JSON. Now, we can call .json() on the response, and then use another .then() after the Promise resolves, so we can use the json we get back!
+  -Now that we've gotten our information back and used .json() on it, let's take a look at it. Put the following console.log in.
+*/
+//  fetch(baseURL)
+//   .then(function(response) {
+//    return response.json();
+//  })
+//    .then(function(json){
+//      console.log(json)
+//    });
 
 
-function getRick(){
-fetch('https://rickandmortyapi.com/api/character')
-  .then(res => res.json())
-  .then(json => console.log(json)); 
- };
+  fetch(baseURL)
+ .then(function(response) {
+  return response.json();
+})
+  .then(function(json){
+    let results = (json.results);
+
+    for(r of results) {
+  let x = (results[0].image);
+  let y = (results[1].image);
+  console.log(x, y);
+  imageBoxOne.src = x;
+  imageBoxTwo.src = y;
+   } 
+
+});
 
 
 
 
 
 
+
+
+
+  // for(iOne of results) {
+  //   console.log(results[0].image);
+  // }
+  // for(iTwo of results) {
+  //   console.log(results[1].image);
+  // }
+
+
+//   for(x of results) {
+//     console.log(results[0].image);
+//   }
+//   for(y of results) {
+//     console.log(results[1].image);
+//   }
+ 
+// });
+
+// let image = new Image();
+// image.src = x;
+// document.getElementById(imageBoxOne).appendChild(image);
 
 
 
